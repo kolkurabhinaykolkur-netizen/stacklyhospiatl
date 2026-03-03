@@ -21,7 +21,7 @@
 <header class="header">
 
 <div class="logo">
-<img src="images/bank.webp">
+<img src="images/logo2.webp">
 </div>
 
 <nav class="nav" id="nav">
@@ -136,6 +136,67 @@ for hospitals and healthcare providers.
 
 </section>
 
+<script>
+
+    
+
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+  e.preventDefault(); // stop normal form submit
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const message = document.getElementById("message");
+  const errorMsg = document.getElementById("errorMsg");
+
+  // Reset
+  errorMsg.textContent = "";
+  name.classList.remove("error");
+  email.classList.remove("error");
+  phone.classList.remove("error");
+  message.classList.remove("error");
+
+  // Email regex
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+  // Check empty fields
+  if (name.value.trim() === "" ||
+      email.value.trim() === "" ||
+      phone.value.trim() === "" ||
+      message.value.trim() === "") {
+
+      errorMsg.textContent = "Please fill all required fields.";
+      
+      if(name.value.trim() === "") name.classList.add("error");
+      if(email.value.trim() === "") email.classList.add("error");
+      if(phone.value.trim() === "") phone.classList.add("error");
+      if(message.value.trim() === "") message.classList.add("error");
+
+      return;
+  }
+
+  // Check email format
+  if (!emailPattern.test(email.value)) {
+      errorMsg.textContent = "Please enter a valid email address.";
+      email.classList.add("error");
+      return;
+  }
+
+  // If everything correct → redirect
+  window.location.href = "404.html";
+
+});
+
+
+
+
+
+
+
+</script>
+
 
 <!-- GOOGLE MAP -->
 <section class="stackly-map">
@@ -150,7 +211,7 @@ src="https://www.google.com/maps?q=Bangalore,India&output=embed">
 <div class="footer-container">
 
     <div class="footer-col">
-        <img src="images/bank.webp" class="footer-logo">
+        <img src="images/logo2.webp" class="footer-logo">
 
         <p>
             At Stackly, we deliver smarter healthcare

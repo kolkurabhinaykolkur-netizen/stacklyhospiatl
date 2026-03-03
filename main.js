@@ -629,52 +629,39 @@ insightCards.forEach(card=>{
 
 
 
-const monthlyBtn =
-document.getElementById("monthlyBtn");
-
-const yearlyBtn =
-document.getElementById("yearlyBtn");
-
-const prices =
-document.querySelectorAll(".price");
-
-const durationText =
-document.querySelectorAll(".duration");
-
-/* MONTHLY */
-monthlyBtn.onclick = ()=>{
-
- monthlyBtn.classList.add("active");
- yearlyBtn.classList.remove("active");
-
- prices.forEach((price,i)=>{
-   price.innerText =
-   "$" + price.dataset.month;
-
-   durationText[i].innerText =
-   "/ per month";
- });
-
-};
-
-/* YEARLY */
-yearlyBtn.onclick = ()=>{
-
- yearlyBtn.classList.add("active");
- monthlyBtn.classList.remove("active");
-
- prices.forEach((price,i)=>{
-   price.innerText =
-   "$" + price.dataset.year;
-
-   durationText[i].innerText =
-   "/ per year";
- });
-
-};
 
 
 
 
 
+const monthlyBtn = document.getElementById("monthlyBtn");
+const yearlyBtn = document.getElementById("yearlyBtn");
+const prices = document.querySelectorAll(".price");
+const duration = document.querySelectorAll(".duration");
+
+monthlyBtn.addEventListener("click", () => {
+  monthlyBtn.classList.add("active");
+  yearlyBtn.classList.remove("active");
+
+  prices.forEach(price => {
+    price.textContent = "$" + price.dataset.month;
+  });
+
+  duration.forEach(d => {
+    d.textContent = "/ per month";
+  });
+});
+
+yearlyBtn.addEventListener("click", () => {
+  yearlyBtn.classList.add("active");
+  monthlyBtn.classList.remove("active");
+
+  prices.forEach(price => {
+    price.textContent = "$" + price.dataset.year;
+  });
+
+  duration.forEach(d => {
+    d.textContent = "/ per year";
+  });
+});
 

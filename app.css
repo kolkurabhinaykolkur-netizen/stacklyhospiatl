@@ -2774,8 +2774,11 @@ padding:5px 14px;
 
 }
 
-.logo img{
-height:100px;   /* increase size */
-width:auto;
-display:block;
+
+/* LOGO IMAGE SIZE */
+.logo img {
+  height: 45px;      /* change size here */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
