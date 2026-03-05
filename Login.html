@@ -147,6 +147,18 @@ font-weight:bold;
 cursor:pointer;
 }
 
+/* FORGOT PASSWORD */
+.forgot{
+margin-top:8px;
+text-align:right;
+font-size:14px;
+}
+
+.forgot a{
+color:#6f2bae;
+cursor:pointer;
+}
+
 /* ========= MOBILE ========= */
 @media(max-width:768px){
 
@@ -223,6 +235,10 @@ Manage devices, patients and analytics safely.
 onclick="togglePass('loginPass',this)"></i>
 </div>
 
+<div class="forgot">
+<a onclick="forgotPassword()">Forgot Password?</a>
+</div>
+
 <button onclick="loginUser()">Login</button>
 
 <p class="switch">
@@ -250,6 +266,10 @@ Don't have account?
 <input type="password" id="regPass" placeholder="Password">
 <i class="fa-solid fa-eye eye"
 onclick="togglePass('regPass',this)"></i>
+</div>
+
+<div class="forgot">
+<a onclick="forgotPassword()">Forgot Password?</a>
 </div>
 
 <button onclick="registerUser()">Register</button>
@@ -283,6 +303,11 @@ icon.classList.replace("fa-eye","fa-eye-slash");
 input.type="password";
 icon.classList.replace("fa-eye-slash","fa-eye");
 }
+}
+
+/* FORGOT PASSWORD REDIRECT */
+function forgotPassword(){
+window.location.href="404.html";
 }
 
 /* LOGIN VALIDATION */
